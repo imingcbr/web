@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title id="title"></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="-1" />
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>
+<link rel="stylesheet" href="css/kampung-digital.css">
+<link rel="icon" href="img/favicon.png" />
+</head>
+
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-3 mr-a box-semua" id="main" style="float:none;">
+						<div class="row">
+							<div class="col-12">
+								<div class="logo bg-white text-center mr-t-10" style="color: #0099bb;"><h2>Login Limited</h2></div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<div class="border-atas-bawah">
+									<div class="text-berjalan bg-white text-grey"><marquee height="17" scrolldelay="150">Gunakan Layanan Akses Internet Wifi Secukupnya & Jangan Lupa Untuk Beristirahat</marquee></div>
+								</div>		
+							</div>
+						</div>
+						<div class="row">
+						<div class="bawah-judul text-grey"></div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<div class="card ">
+									<div class="login">
+								$(if chap-id)
+									<form name="sendin" action="$(link-login-only)" method="post">
+										<input type="hidden" name="username" />
+										<input type="hidden" name="password" />
+										<input type="hidden" name="dst" value="$(link-orig)" />
+										<input type="hidden" name="popup" value="true" />
+									</form>
+	
+									<script type="text/javascript" src="/md5.js"></script>
+									<script type="text/javascript">
+									
+	    							function doLogin() {
+									document.sendin.username.value = document.login.username.value;
+									document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+									document.sendin.submit();
+									return false;
+	    							}
+									//-->
+									</script>
+								$(endif)
+						
+					<div>	
+					<form autocomplete="off" name="login" action="$(link-login-only)" method="post"
+					    $(if chap-id) onSubmit="return doLogin()" $(endif)>
+						<input type="hidden" name="dst" value="$(link-orig)" />
+						<input type="hidden" name="popup" value="true" />
+								<input class="form-control-md mr-t-10 plch-center" name="username" type="text" value="$(username)" placeholder="Masukkan Voucer/User" />
+								<input class="form-control-md mr-t-10 plch-center" name="password" type="hidden" placeholder="Password" />
+							<div class="text-center mr-t-10">
+								
+								<div class="col-6" style="width: 49%;">
+									
+								</div>
+								</a>
+								<div class="col-6" style="width: 49%; float: center;">
+									<button type="submit" class="w-12 bg-template btn-md pd-5">Sambungkan</button>
+								</div>
+							</div>
+							</form>
+						</div>					
+					</div>
+				</div>
+			</div>
+		</div>					
+	</div>
+$(if error)<div class="alert bg-danger text-center mr-t-10">$(error)</div>$(endif)
+<div class="mr-b-10"></div>
+<!-- ======================== JANGAN HAPUS BAGIAN DIBAWAH INI ======================== -->
+<div class="pd-t-10 text-center text-grey">Copyright 2022 |  Shome</div>
+<!-- ========================  JANGAN HAPUS BAGIAN DIATAS INI ======================== -->
+</div>
+<script type="text/javascript">
+
+document.login.username.focus();
+document.getElementById('title').innerHTML = window.location.hostname + " > login";
+
+// login page
+var username = document.login.username;
+var password = document.login.password;
+var luser = document.getElementById("luser");
+var lpass = document.getElementById("lpass");
+var btnmem = document.getElementById("btnmem");
+var btnvcr = document.getElementById("btnvcr");
+
+// set password = username
+function setpass(){
+  var user = username.value		
+  password.value = user;
+}
+username.onchange = setpass;
+btnmem.style.backgroundColor = "#73818f";
+btnvcr.style.backgroundColor = "rgb(0, 153, 187)";  
+btntrial.style.backgroundColor = "#73818f";
+
+//-->
+</script>
+</body>
+</html>
